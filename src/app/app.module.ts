@@ -11,6 +11,8 @@ import { SectiononeComponent } from './shared/components/sectionone/sectionone.c
 import { SectiontwoComponent } from './shared/components/sectiontwo/sectiontwo.component';
 import { SectionthreeComponent } from './shared/components/sectionthree/sectionthree.component';
 import { ModaloginComponent } from './shared/components/modalogin/modalogin.component';
+import { SectionfourComponent } from './shared/components/sectionfour/sectionfour.component';
+import { SectionfiveComponent } from './shared/components/sectionfive/sectionfive.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ModaloginComponent } from './shared/components/modalogin/modalogin.comp
     SectiononeComponent,
     SectiontwoComponent,
     SectionthreeComponent,
-    ModaloginComponent
+    ModaloginComponent,
+    SectionfourComponent,
+    SectionfiveComponent
   ],
   imports: [
     BrowserModule,
