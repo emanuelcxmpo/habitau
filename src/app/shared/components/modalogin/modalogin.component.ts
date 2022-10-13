@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-modalogin',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModaloginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalSS:ModalService) { }
 
   ngOnInit(): void {
   }
 
+  closeModal() {
+    this.modalSS.$modal.emit(false)
+  }
 }
