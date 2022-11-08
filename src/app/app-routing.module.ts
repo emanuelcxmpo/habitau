@@ -1,7 +1,11 @@
-import { NgModule } from '@angular/core';
+import { SectiononeComponent } from './shared/components/sectionone/sectionone.component';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+
+  { path: '',
+    component: SectiononeComponent},
   {
     path: 'about',
     loadChildren: () =>
