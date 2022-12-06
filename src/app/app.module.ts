@@ -1,6 +1,10 @@
+import { authInterceptorProviders } from './services/auth.interceptor';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './pages/public/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgToastModule } from 'ng-angular-popup';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +18,10 @@ import { SectionfourComponent } from './shared/components/sectionfour/sectionfou
 import { SectionfiveComponent } from './shared/components/sectionfive/sectionfive.component';
 import { SectionsixComponent } from './shared/components/sectionsix/sectionsix.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { FormhabitacionComponent } from './pages/private/formhabitacion/formhabitacion.component';
+import { PagenotfoundComponent } from './pages/public/pagenotfound/pagenotfound.component';
+import { DasharrendatarioComponent } from './pages/private/dasharrendatario/dasharrendatario.component';
+import { DashadministradorComponent } from './pages/private/dashadministrador/dashadministrador.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +36,22 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     SectionfiveComponent,
     SectionsixComponent,
     FooterComponent,
+    RegisterComponent,
+    FormhabitacionComponent,
+    PagenotfoundComponent,
+    DasharrendatarioComponent,
+    DashadministradorComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgToastModule,
+  ],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

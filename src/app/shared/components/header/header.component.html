@@ -1,8 +1,9 @@
 <!-- component -->
 <nav class="fixed top-0 left-0 z-20 flex items-center justify-between w-full px-4 py-4 bg-white font-poppins">
-	<a class="text-3xl font-bold leading-none" href="#">
+	<a routerLink="" routerLinkActive="true" class="text-3xl font-bold leading-none">
 		<img class="h-10" src="https://i.postimg.cc/xdMpddpN/principal.png" alt="HabitaU">
 	</a>
+
 	<div class="lg:hidden">
 		<button class="flex items-center p-3 text-blue-600 navbar-burger">
 			<svg class="block w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -11,24 +12,43 @@
 			</svg>
 		</button>
 	</div>
+
 	<ul
 		class="absolute hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-1">
-		<li><a class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
-				href="/explore">Explorar habitaciones</a></li>
-		<li><a class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
-				href="/rent">Arrienda</a></li>
-		<li><a class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
-				href="/spaces">Espacios</a></li>
-		<li><a class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
-				href="/about">Sobre nosotros</a></li>
-		<li><a class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
-				href="/contact">Contacto</a></li>
+		<li><a routerLink="explore" routerLinkActive="true"
+				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Explorar
+				habitaciones</a></li>
+		<li><a routerLink="rent" routerLinkActive="true"
+				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Arrienda</a>
+		</li>
+		<li><a routerLink="spaces" routerLinkActive="true"
+				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Espacios</a>
+		</li>
+		<li><a routerLink="about" routerLinkActive="true"
+				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Sobre
+				nosotros</a></li>
+		<li><a routerLink="contact" routerLinkActive="true"
+				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Contacto</a>
+		</li>
 	</ul>
-	<a class="hidden px-6 py-2 text-sm font-semibold text-blue-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto lg:mr-3 bg-gray-50 outline outline-offset-2 outline-1 outline-blue-600 hover:bg-blue-50"
-		href="#">Publicar</a>
-	<button (click)="openModal()"
+	<a (click)="openModal()" *ngIf="!login.isLoggedIn()"
+		class="hidden px-6 py-2 text-sm font-semibold text-blue-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto lg:mr-3 outline outline-1 outline-blue-600 hover:bg-blue-600 hover:text-white">Publicar
+	</a>
+
+	<a *ngIf="login.isLoggedIn()" routerLink="arrendatario" routerLinkActive="true"
+		class="hidden px-6 py-2 text-sm font-semibold text-blue-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto lg:mr-3 outline outline-1 outline-blue-600 hover:bg-blue-600 hover:text-white">Publicar
+	</a>
+
+	<button (click)="logout()" *ngIf="login.isLoggedIn()" routerLink="" routerLinkActive="true"
+		class="hidden px-6 py-2.5 text-sm font-semibold text-white transition duration-200 hover:bg-red-800 bg-red-600 rounded-full lg:inline-block">Cerrar
+		sesión
+	</button>
+
+	<button (click)="openModal()" *ngIf="!login.isLoggedIn()"
 		class="hidden px-6 py-2.5 text-sm font-semibold text-white transition duration-200 hover:bg-blue-800 bg-blue-600 rounded-full lg:inline-block">Inciar
-		sesión</button>
+		sesión
+	</button>
+
 </nav>
 <div class="relative z-50 hidden navbar-menu">
 	<div class="fixed inset-0 bg-gray-800 opacity-25 navbar-backdrop"></div>

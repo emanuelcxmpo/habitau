@@ -1,0 +1,161 @@
+<div class="flex justify-center min-h-screen pt-20">
+    <div class="hidden bg-cover rounded-r-3xl lg:block lg:w-2/5"
+        style="background-image: url('https://i.postimg.cc/hG5pWnL3/linkedin-sales-solutions-u3hmzw5-U-SI-unsplash.jpg')">
+    </div>
+
+    <div class="flex items-center w-full max-w-3xl mx-auto lg:px-12 lg:w-3/5 font-poppins">
+        <div class="w-full">
+            <h1 class="text-4xl font-bold text-gray-800">
+                Crea tu cuenta
+            </h1>
+
+            <p class="text-gray-500 ">
+                Ingresa los datos para crear tu cuenta
+            </p>
+
+            <h3 class="my-4 text-xl font-semibold text-gray-800">
+                Datos básicos
+            </h3>
+
+
+            <form (ngSubmit)="formSubmit()">
+                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <!-- <div>
+                        <label for="country" class="block mb-2 text-sm font-medium text-gray-900">
+                            Perfil de user
+                        </label>
+
+                        <ul class="grid w-full gap-6 md:grid-cols-2">
+                            <li>
+                                <input type="radio" id="student" name="tipo" value="1" class="hidden peer"
+                                     name="tipo" required>
+
+                                <label for="student"
+                                    class="inline-flex items-center justify-between w-full px-3 py-2 text-blue-500 border border-blue-500 rounded-full cursor-pointer peer-checked:border-blue-600 peer-checked:text-white peer-checked:bg-blue-700 hover:text-blue-500 hover:bg-gray-100">
+
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                                        </svg>
+
+                                        <span class="mx-2">
+                                            Estudiante
+                                        </span>
+                                    </div>
+                                </label>
+                            </li>
+
+                            <li>
+                                <input type="radio" id="arrendatario" name="tipo" value="2" class="hidden peer"
+                                    name="tipo" required>
+
+                                <label for="arrendatario"
+                                    class="inline-flex items-center justify-between w-full px-3 py-2 text-blue-500 border border-blue-500 rounded-full cursor-pointer peer-checked:border-blue-600 peer-checked:text-white peer-checked:bg-blue-700 hover:text-blue-500 hover:bg-gray-100">
+
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+                                        </svg>
+
+                                        <span class="mx-2">
+                                            Arrendatario
+                                        </span>
+
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <br> -->
+                    <!-- <div>
+                        <label for="country" class="block mb-2 text-sm font-medium text-gray-900">
+                            Tipo de documento</label>
+                        <select id="country" name="country" autocomplete="country"
+                            class="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <option>- Selecciona una opción -</option>
+                            <option>Tarjeta de identidad</option>
+                            <option>Cedula de ciudadania</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="document" class="block mb-2 text-sm font-medium text-gray-900">Número de
+                            identidad</label>
+                        <input type="number" id="document"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="1002392080" pattern="[0-9]{3}" required>
+                    </div> -->
+                    <div>
+                        <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre(s)</label>
+                        <input type="text" id="nombre" [(ngModel)]="user.nombres" name="nombre"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="Digite su nombre" required>
+                    </div>
+                    <div>
+                        <label for="apellidos" class="block mb-2 text-sm font-medium text-gray-900 ">Apellidos</label>
+                        <input type="text" id="apellidos" [(ngModel)]="user.apellidos" name="apellidos"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="Digite sus apellidos" required>
+                    </div>
+                    <div>
+                        <label for="telefono" class="block mb-2 text-sm font-medium text-gray-900">Teléfono</label>
+                        <input type="number" id="telefono" [(ngModel)]="user.telefono" name="telefono"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="3004567890" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Correo
+                            electrónico</label>
+                        <input type="email" id="email" [(ngModel)]="user.email" name="email"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="nombre@correo.com" required>
+                    </div>
+                </div>
+
+                <h3 class="my-4 text-xl font-semibold text-gray-800">
+                    Datos de acceso
+                </h3>
+
+                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <div>
+                        <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Usuario</label>
+                        <input type="text" id="username" [(ngModel)]="user.username" name="username"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="Digite su user" required>
+                    </div>
+
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Contraseña</label>
+                        <input type="password" id="password" [(ngModel)]="user.password" name="password"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="•••••••••" required>
+                    </div>
+                </div>
+                <div class="flex items-start mb-6">
+                    <div class="flex items-center h-5">
+                        <input id="check" type="checkbox" value=""
+                            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+                            required>
+                    </div>
+                    <label for="check" class="ml-2 text-sm font-medium text-gray-900">Acepto <a href="#"
+                            class="text-blue-600 hover:underline">términos y condiciones generales </a> y <a href="#"
+                            class="text-blue-600 hover:underline"> la política de tratamiento de
+                            datos</a>.</label>
+                </div>
+                <div class="grid w-full gap-6 md:grid-cols-2">
+                    <button type="submit"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center">Crear
+                        cuenta</button>
+
+                    <button type="reset"
+                        class="text-black hover:underline focus: font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Limpiar
+                        campos</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
