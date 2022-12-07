@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoginService } from './../../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
@@ -8,10 +9,9 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class HeaderComponent implements OnInit {
 
-  
   modalSwitch: boolean = false;
 
-  constructor(private modalSS:ModalService, public login:LoginService) {}
+  constructor(private modalSS:ModalService, public login:LoginService, private router: Router) {}
 
   ngOnInit(){
     this.modalSS.$modal.subscribe((valor)=>{this.modalSwitch = valor})
@@ -24,6 +24,6 @@ export class HeaderComponent implements OnInit {
 
   public logout() {
     this.login.logout();
-    window.location.reload();
+    this.router.navigate(['']);
   }
 }

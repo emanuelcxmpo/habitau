@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoginService } from './../../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DasharrendatarioComponent implements OnInit {
   user: any = null;
-  constructor(public login: LoginService) {}
+  constructor(public login: LoginService, private router: Router) {}
 
   ngOnInit(): void {
     this.user = this.login.getUser();
@@ -16,6 +17,6 @@ export class DasharrendatarioComponent implements OnInit {
 
   public logout() {
     this.login.logout();
-    window.location.reload();
+    this.router.navigate(['']);
   }
 }

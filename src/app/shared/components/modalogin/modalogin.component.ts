@@ -68,12 +68,12 @@ export class ModaloginComponent implements OnInit {
 
           if (this.loginService.getUserRole() == "ADMIN") {
             // window.location.href = '/administador';
-            this.router.navigate(['administador']);
+            this.router.navigate(['administador/home']);
             this.loginService.loginStatusSubject.next(true)
           }
           else if(this.loginService.getUserRole() == "ARRENDATARIO"){
             // window.location.href = '/arrendatario';
-            this.router.navigate(['arrendatario']);
+            this.router.navigate(['arrendatario/home']);
             this.loginService.loginStatusSubject.next(true)
           }
           else {

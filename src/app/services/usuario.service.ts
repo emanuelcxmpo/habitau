@@ -11,4 +11,9 @@ export class UsuarioService {
   public registroUsuario(user: any) {
     return this.httpClient.post(`${baseUrl}/usuarios/`, user);
   }
+
+  public eliminarUsuario(userId:any){
+    return this.httpClient.delete(`${baseUrl}/usuarios/${userId}`);
+  }
+
 }

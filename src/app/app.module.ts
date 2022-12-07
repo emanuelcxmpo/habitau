@@ -22,6 +22,10 @@ import { FormhabitacionComponent } from './pages/private/formhabitacion/formhabi
 import { PagenotfoundComponent } from './pages/public/pagenotfound/pagenotfound.component';
 import { DasharrendatarioComponent } from './pages/private/dasharrendatario/dasharrendatario.component';
 import { DashadministradorComponent } from './pages/private/dashadministrador/dashadministrador.component';
+import { ProfileComponent } from './pages/private/profile/profile.component';
+import { HomeComponent } from './pages/private/home/home.component';
+import { PropiedadesComponent } from './pages/private/propiedades/propiedades.component';
+import { FormusuarioComponent } from './pages/private/formusuario/formusuario.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,10 @@ import { DashadministradorComponent } from './pages/private/dashadministrador/da
     PagenotfoundComponent,
     DasharrendatarioComponent,
     DashadministradorComponent,
+    ProfileComponent,
+    HomeComponent,
+    PropiedadesComponent,
+    FormusuarioComponent,
   ],
   imports: [
     BrowserModule,
