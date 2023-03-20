@@ -1,8 +1,11 @@
+import { AdmintipopropiedadesComponent } from './pages/private/admintipopropiedades/admintipopropiedades.component';
+import { AdminprofileComponent } from './pages/private/adminprofile/adminprofile.component';
+import { AdministradorComponent } from './pages/private/administrador/administrador.component';
 import { FormusuarioComponent } from './pages/private/formusuario/formusuario.component';
 import { DashadministradorComponent } from './pages/private/dashadministrador/dashadministrador.component';
 import { PropiedadesComponent } from './pages/private/propiedades/propiedades.component';
 import { HomeComponent } from './pages/private/home/home.component';
-import { FormhabitacionComponent } from './pages/private/formhabitacion/formhabitacion.component';
+import { FormpropiedadComponent } from './pages/private/formpropiedad/formpropiedad.component';
 import { ProfileComponent } from './pages/private/profile/profile.component';
 import { ArrendatarioGuard } from './services/arrendatario.guard';
 import { DasharrendatarioComponent } from './pages/private/dasharrendatario/dasharrendatario.component';
@@ -27,6 +30,33 @@ const routes: Routes = [
   { path: 'rent', component: RentnavComponent },
   { path: 'register', component: RegisterComponent },
   {
+    path: 'estudiante',
+    component: DasharrendatarioComponent,
+    canActivate: [ArrendatarioGuard],
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+      {
+        path: 'publish',
+        component: PropiedadesComponent,
+      },
+      {
+        path: 'registropropiedad',
+        component: FormpropiedadComponent,
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+      },
+      {
+        path: 'update',
+        component: FormusuarioComponent,
+      },
+    ],
+  },
+  {
     path: 'arrendatario',
     component: DasharrendatarioComponent,
     canActivate: [ArrendatarioGuard],
@@ -41,7 +71,7 @@ const routes: Routes = [
       },
       {
         path: 'registropropiedad',
-        component: FormhabitacionComponent,
+        component: FormpropiedadComponent,
       },
       {
         path: 'profile',
@@ -63,12 +93,20 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
+        path: 'admin',
+        component: AdministradorComponent,
+      },
+      {
+        path: 'tipopropiedades',
+        component: AdmintipopropiedadesComponent,
+      },
+      {
         path: 'profile',
         component: ProfileComponent,
       },
       {
         path: 'users',
-        component: PropiedadesComponent,
+        component: AdminprofileComponent,
       },
     ],
   },

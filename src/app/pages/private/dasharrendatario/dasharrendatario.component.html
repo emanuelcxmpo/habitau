@@ -1,7 +1,7 @@
 <section>
     <aside
         class="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
-        <div>
+        <div class="font-poppins">
             <a href="" routerLink="" routerLinkActive="true" class="text-3xl font-bold leading-none">
                 <div class="flex justify-center">
                     <div class="px-6 py-4 -mx-6 font-poppins">
@@ -11,11 +11,11 @@
             </a>
 
             <div class="mt-8 text-center">
-                <img src="https://www.unmc.edu/cihc/_images/faculty/default.jpg" alt=""
+                <img src="https://secure.gravatar.com/avatar/3ebbdbd8f3eac0d737be62ade8d15cb6?s=90&d=mm" alt=""
                     class="object-cover w-10 h-10 m-auto rounded-full lg:w-28 lg:h-28">
-                <h5 class="hidden mt-4 text-xl font-bold text-gray-800 lg:block">{{ user.nombres + " " + user.apellidos
+                <h5 class="hidden mt-4 text-xl font-semibold text-gray-800 lg:block capitalize">{{ user.nombres + " " + user.apellidos
                     }}</h5>
-                <span class="hidden text-gray-400 lg:block">Arrendatario</span>
+                <span class="hidden text-gray-400 normal-case lg:block">{{ user.authorities[0].authority }}</span>
             </div>
 
             <ul class="mt-8 space-y-2 tracking-wide">
@@ -67,10 +67,10 @@
             </button>
         </div>
     </aside>
-    <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%] font-poppins">
+    <div class="pt-10 ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%] font-poppins">
         <div class="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
             <div class="flex items-center justify-between px-6 space-x-4 2xl:container">
-                <h5 hidden class="text-2xl font-bold text-gray-800 lg:block">Inicio</h5>
+                <h5 hidden class="text-2xl font-bold text-gray-800 lg:block">{{ titulo }}</h5>
                 <button class="w-12 h-16 -mr-2 border-r lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 my-auto" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -79,31 +79,6 @@
                     </svg>
                 </button>
                 <div class="flex space-x-4">
-                    <!--search bar -->
-                    <div hidden class="md:block">
-                        <div class="relative flex items-center text-gray-400 focus-within:text-cyan-400">
-                            <span class="absolute flex items-center h-6 pr-3 border-r border-gray-300 left-4">
-                                <svg xmlns="http://ww50w3.org/2000/svg" class="w-4 fill-current"
-                                    viewBox="0 0 35.997 36.004">
-                                    <path id="Icon_awesome-search" data-name="search"
-                                        d="M35.508,31.127l-7.01-7.01a1.686,1.686,0,0,0-1.2-.492H26.156a14.618,14.618,0,1,0-2.531,2.531V27.3a1.686,1.686,0,0,0,.492,1.2l7.01,7.01a1.681,1.681,0,0,0,2.384,0l1.99-1.99a1.7,1.7,0,0,0,.007-2.391Zm-20.883-7.5a9,9,0,1,1,9-9A8.995,8.995,0,0,1,14.625,23.625Z">
-                                    </path>
-                                </svg>
-                            </span>
-                            <input type="search" name="leadingIcon" id="leadingIcon" placeholder="Busca aquí"
-                                class="w-full pl-14 pr-4 py-2.5 rounded-xl text-sm text-gray-800 outline-none border border-gray-300 focus:border-cyan-300 transition">
-                        </div>
-                    </div>
-                    <!--/search bar -->
-                    <button aria-label="search"
-                        class="w-10 h-10 bg-gray-100 border rounded-xl focus:bg-gray-100 active:bg-gray-200 md:hidden">
-                        <svg xmlns="http://ww50w3.org/2000/svg" class="w-4 mx-auto text-gray-800 fill-current"
-                            viewBox="0 0 35.997 36.004">
-                            <path id="Icon_awesome-search" data-name="search"
-                                d="M35.508,31.127l-7.01-7.01a1.686,1.686,0,0,0-1.2-.492H26.156a14.618,14.618,0,1,0-2.531,2.531V27.3a1.686,1.686,0,0,0,.492,1.2l7.01,7.01a1.681,1.681,0,0,0,2.384,0l1.99-1.99a1.7,1.7,0,0,0,.007-2.391Zm-20.883-7.5a9,9,0,1,1,9-9A8.995,8.995,0,0,1,14.625,23.625Z">
-                            </path>
-                        </svg>
-                    </button>
                     <button aria-label="chat"
                         class="w-10 h-10 bg-gray-100 border rounded-xl focus:bg-gray-100 active:bg-gray-200">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 m-auto text-gray-800" fill="none"

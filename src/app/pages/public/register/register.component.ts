@@ -1,5 +1,6 @@
 import { UsuarioService } from '../../../services/usuario.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { NgToastService } from 'ng-angular-popup';
 
 @Component({
@@ -9,6 +10,7 @@ import { NgToastService } from 'ng-angular-popup';
 })
 export class RegisterComponent implements OnInit {
   public user = {
+    perfil: '',
     nombres: '',
     apellidos: '',
     telefono: '',
@@ -18,13 +20,13 @@ export class RegisterComponent implements OnInit {
   };
 
   constructor(
-    private UsuarioService: UsuarioService,
+    private usuarioService: UsuarioService,
     private toast: NgToastService
   ) {}
 
   ngOnInit(): void {}
 
-  formSubmit() {
+  formSubmit(formulario: NgForm) {
     console.log(this.user);
 
     if (this.user.nombres == '' || this.user.nombres == null) {
@@ -87,7 +89,7 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    this.UsuarioService.registroUsuario(this.user).subscribe(
+    this.usuarioService.registroUsuario(this.user).subscribe(
       (data) => {
         console.log(data);
         this.toast.success({
@@ -107,6 +109,6 @@ export class RegisterComponent implements OnInit {
         });
       }
     );
-
+    formulario.resetForm();
   }
 }

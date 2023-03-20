@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormhabitacionComponent } from './formhabitacion.component';
+import { FormpropiedadComponent } from './formpropiedad.component';
 
-describe('FormhabitacionComponent', () => {
-  let component: FormhabitacionComponent;
-  let fixture: ComponentFixture<FormhabitacionComponent>;
+describe('FormpropiedadComponent', () => {
+  let component: FormpropiedadComponent;
+  let fixture: ComponentFixture<FormpropiedadComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormhabitacionComponent ]
+      declarations: [ FormpropiedadComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FormhabitacionComponent);
+    fixture = TestBed.createComponent(FormpropiedadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

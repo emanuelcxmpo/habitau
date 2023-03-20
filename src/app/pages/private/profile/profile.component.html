@@ -2,20 +2,20 @@
     <div class="pb-8 bg-white rounded-lg shadow-md font-poppins">
         <div class="w-full h-[230px]">
             <img src="https://i.postimg.cc/tRz5pdqw/Portada.jpg"
-                class="w-full h-full rounded-tl-lg rounded-tr-lg">
+                class="object-cover rounded-tl-lg h-36 w-96 md:h-full md:w-full">
         </div>
         <div class="flex flex-col items-center -mt-20">
-            <img src="https://www.unmc.edu/cihc/_images/faculty/default.jpg"
+            <img src="https://secure.gravatar.com/avatar/3ebbdbd8f3eac0d737be62ade8d15cb6?s=90&d=mm"
                 class="w-40 border-4 border-white rounded-full">
             <div class="flex items-center mt-2 space-x-2">
-                <p class="text-2xl">{{ user.nombres + " " + user.apellidos }}</p>
+                <p class="text-2xl font-semibold capitalize">{{ user.nombres + " " + user.apellidos }}</p>
             </div>
-            <p class="text-gray-700">Arrendatario</p>
+            <p class="text-gray-700">{{ user.authorities[0].authority }}</p>
         </div>
         <div class="flex flex-col items-center justify-end flex-1 px-8 mt-2 lg:items-end">
             <div class="flex items-center mt-2 space-x-4">
                 <button routerLink="/arrendatario/update"
-                    class="flex items-center px-4 py-2 space-x-2 text-sm text-gray-100 transition duration-100 bg-blue-600 rounded-full hover:bg-blue-700">
+                    class="flex items-center px-4 py-2 space-x-2 text-sm text-gray-100 transition duration-100 bg-blue-600 rounded-full hover:bg-blue-700 font-medium">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                         <path
                             d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
@@ -26,7 +26,7 @@
                     <span>Actualizar</span>
                 </button>
                 <button
-                    class="flex items-center px-4 py-2 space-x-2 text-sm text-gray-100 transition duration-100 bg-green-600 rounded-full hover:bg-green-700">
+                    class="flex items-center px-4 py-2 space-x-2 text-sm text-gray-100 transition duration-100 bg-green-600 rounded-full hover:bg-green-700 font-medium">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                         <path fill-rule="evenodd"
                             d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
@@ -65,7 +65,7 @@
                         <span class="text-gray-700">{{ user.username }}</span>
                     </li>
                     <li class="flex py-2 border-b">
-                        <span class="w-24 font-bold">Rol:</span>
+                        <span class="w-24 font-bold">Perfil:</span>
                         <span class="text-gray-700">{{ user.authorities[0].authority }}</span>
                     </li>
                     <li class="flex py-2 border-b">

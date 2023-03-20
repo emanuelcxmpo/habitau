@@ -16,4 +16,8 @@ export class UsuarioService {
     return this.httpClient.delete(`${baseUrl}/usuarios/${userId}`);
   }
 
+  public listarPropiedades(){
+    return this.httpClient.get(`${baseUrl}/usuarios/`);
+  }
+
 }
