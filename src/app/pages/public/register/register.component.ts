@@ -1,6 +1,6 @@
 import { UsuarioService } from '../../../services/usuario.service';
-import { Component, Input, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgToastService } from 'ng-angular-popup';
 
 @Component({
@@ -9,87 +9,104 @@ import { NgToastService } from 'ng-angular-popup';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  public user = {
-    perfil: '',
-    nombres: '',
-    apellidos: '',
-    telefono: '',
-    email: '',
-    username: '',
-    password: '',
-  };
+  registerForm!: FormGroup;    
+
+  // public user = {
+  //   perfil: '',
+  //   nombres: '',
+  //   apellidos: '',
+  //   telefono: '',
+  //   email: '',
+  //   username: '',
+  //   password: '',
+  // };
 
   constructor(
     private usuarioService: UsuarioService,
+    private formBuilder: FormBuilder,
     private toast: NgToastService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.registerForm = this.initForm();
+  }
 
-  formSubmit(formulario: NgForm) {
-    console.log(this.user);
+  initForm(): FormGroup {
+    return this.formBuilder.group({
+      perfilUsuario: ['', Validators.required],
+      nombres: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(20),
+        ],
+      ],
+      apellidos: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(30),
+        ],
+      ],
+      telefono: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(10),
+          Validators.pattern('^[0-9]*$'),
+        ],
+      ],
+      correoElectronico: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+        ],
+      ],
+      usuario: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(20),
+        ],
+      ],
+      contrasena: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(20),
+          Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$'),
+        ],
+      ],
+      checkValidacion: ['', Validators.requiredTrue],
+    });
+  }
 
-    if (this.user.nombres == '' || this.user.nombres == null) {
-      this.toast.warning({
-        detail: 'Mensaje',
-        summary: 'El nombre es requerido',
-        sticky: true,
-        position: 'tr',
-      });
-      return;
-    }
+  // enviarData() {
+  //   if (this.registerForm.valid) {
+  //     console.log(this.registerForm.value);
+  //     this.registerForm.reset();
+  //   } else {
+  //     this.toast.info({
+  //       detail: 'Mensaje',
+  //       summary: 'Algunos campos no son validos',
+  //       sticky: true,
+  //       position: 'tr',
+  //       duration: 5000,
+  //     });
+  //   }
+  // }
 
-    if (this.user.apellidos == '' || this.user.apellidos == null) {
-      this.toast.warning({
-        detail: 'Mensaje',
-        summary: 'Los apellidos son requeridos',
-        sticky: true,
-        position: 'tr',
-      });
-      return;
-    }
+  enviarData() {
+    console.log(this.registerForm.value);
 
-    if (this.user.telefono == '' || this.user.telefono == null) {
-      this.toast.warning({
-        detail: 'Mensaje',
-        summary: 'El numero de celular es requerido',
-        sticky: true,
-        position: 'tr',
-      });
-      return;
-    }
-
-    if (this.user.email == '' || this.user.email == null) {
-      this.toast.warning({
-        detail: 'Mensaje',
-        summary: 'El correo es requerido',
-        sticky: true,
-        position: 'tr',
-      });
-      return;
-    }
-
-    if (this.user.username == '' || this.user.username == null) {
-      this.toast.error({
-        detail: 'Mensaje',
-        summary: 'El user es requerido',
-        sticky: true,
-        position: 'tr',
-      });
-      return;
-    }
-
-    if (this.user.password == '' || this.user.password == null) {
-      this.toast.error({
-        detail: 'Mensaje',
-        summary: 'La contraseña es requerida',
-        sticky: true,
-        position: 'tr',
-      });
-      return;
-    }
-
-    this.usuarioService.registroUsuario(this.user).subscribe(
+    this.usuarioService.registroUsuario(this.registerForm.value).subscribe(
       (data) => {
         console.log(data);
         this.toast.success({
@@ -97,6 +114,7 @@ export class RegisterComponent implements OnInit {
           summary: 'Usuario registrado correctamente',
           sticky: true,
           position: 'tr',
+          duration: 5000,
         });
       },
       (error) => {
@@ -106,9 +124,10 @@ export class RegisterComponent implements OnInit {
           summary: 'Ha ocurrido un error en la base de datos',
           sticky: true,
           position: 'tr',
+          duration: 5000,
         });
       }
     );
-    formulario.resetForm();
+    this.registerForm.reset();
   }
 }

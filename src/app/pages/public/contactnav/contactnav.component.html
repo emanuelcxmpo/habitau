@@ -39,29 +39,124 @@
         </div>
         <div
             class="flex flex-col w-full p-8 mt-10 font-medium bg-white rounded-xl lg:w-3/6 xl:w-2/5 md:w-full lg:ml-auto lg:mt-0">
-            <form>
+            <form [formGroup]="contactoForm" (ngSubmit)="envioCorreo()" novalidate>
                 <div class="relative mb-4">
-                    <label for="name" class="text-sm leading-7 text-gray-700">Nombre completo</label>
-                    <input type="text" id="name" name="name"
+                    <label for="nombre" class="text-sm leading-7 text-gray-700">Nombre completo</label>
+                    <input formControlName="nombreCompleto" type="text" id="nombre" name="nombre"
                         class="w-full px-3 py-1 text-sm font-normal leading-8 text-gray-900 transition-colors duration-150 ease-in-out bg-white border border-gray-300 rounded-md outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200"
                         placeholder="Alcides Navarro" required>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('nombreCompleto')?.touched && contactoForm.get('nombreCompleto')?.errors?.['required']">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p>Este campo es requerido</p>
+                    </div>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('nombreCompleto')?.touched && contactoForm.get('nombreCompleto')?.errors?.['maxlength']">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p> Maximo {{ contactoForm.get('nombreCompleto')?.errors?.['maxlength']?.requiredLength }}
+                            caracteres en este campo</p>
+                    </div>
                 </div>
+
                 <div class="relative mb-4">
-                    <label for="email" class="text-sm leading-7 text-gray-700">Correo electrónico</label>
-                    <input type="email" id="email" name="email"
+                    <label for="correo" class="text-sm leading-7 text-gray-700">Correo electrónico</label>
+                    <input formControlName="correoElectronico" type="text" id="correo" name="correo"
                         class="w-full px-3 py-1 text-sm font-normal leading-8 text-gray-900 transition-colors duration-150 ease-in-out bg-white border border-gray-300 rounded-md outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200"
                         placeholder="nombre@correo.com" required>
+
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('correoElectronico')?.touched && contactoForm.get('correoElectronico')?.errors?.['required']">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p>Este campo es requerido</p>
+                    </div>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('correoElectronico')?.touched && contactoForm.get('correoElectronico')?.errors?.['minlength']">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+
+                        <p>Minimo {{ contactoForm.get('correoElectronico')?.errors?.['minlength']?.requiredLength }}
+                            caracteres en ese campo</p>
+                    </div>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('correoElectronico')?.touched && contactoForm.get('correoElectronico')?.errors?.['pattern']">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+
+                        <p>Ingrese un correo electronico valido</p>
+                    </div>
                 </div>
+
                 <div class="relative mb-4">
-                    <label for="phone" class="text-sm leading-7 text-gray-700">Numero de teléfono</label>
-                    <input type="number" id="phone" name="phone"
+                    <label for="telefono" class="text-sm leading-7 text-gray-700">Numero de teléfono</label>
+                    <input formControlName="numeroTelefono" type="text" id="telefono" name="telefono"
                         class="w-full px-3 py-1 text-sm font-normal leading-8 text-gray-900 transition-colors duration-150 ease-in-out bg-white border border-gray-300 rounded-md outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200"
                         placeholder="3013420192" required>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('numeroTelefono')?.touched && contactoForm.get('numeroTelefono')?.errors?.['required']">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p>Este campo es requerido</p>
+                    </div>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('numeroTelefono')?.touched && contactoForm.get('numeroTelefono')?.errors?.['minlength']">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+
+                        <p>Minimo {{ contactoForm.get('numeroTelefono')?.errors?.['minlength']?.requiredLength }}
+                            caracteres en ese campo</p>
+                    </div>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('numeroTelefono')?.touched && contactoForm.get('numeroTelefono')?.errors?.['maxlength']">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p> Maximo {{ contactoForm.get('numeroTelefono')?.errors?.['maxlength']?.requiredLength }}
+                            caracteres en este campo</p>
+                    </div>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('numeroTelefono')?.touched && contactoForm.get('numeroTelefono')?.errors?.['pattern']">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+
+                        <p>Ingrese un numero de telefono valido</p>
+                    </div>
                 </div>
                 <div class="relative mb-4">
                     <label for="type" class="block mb-2 text-sm font-medium text-gray-700">
                         Tipo de solicitud</label>
-                    <select id="type" name="type" autocomplete="type"
+                    <select formControlName="tipoSolicitud" id="type" name="type" autocomplete="type"
                         class="block w-full px-3 py-2 mt-1 font-normal bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                         <option hidden selected>Seleccione </option>
                         <option>Queja o reclamo</option>
@@ -69,25 +164,76 @@
                         <option>Dudas</option>
                         <option>Otra solicitud</option>
                     </select>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('tipoSolicitud')?.touched && contactoForm.get('tipoSolicitud')?.errors?.['required']">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p>Este campo es requerido</p>
+                    </div>
                 </div>
                 <div class="relative mb-4">
-                    <label for="message" class="text-sm leading-7 text-gray-700">Mensaje</label>
-                    <textarea id="message" name="message" rows="4"
-                        class="w-full px-3 py-1 text-sm leading-8 text-gray-900 transition-colors duration-150 ease-in-out bg-white border border-gray-300 rounded-md outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200"
-                        required> </textarea>
+                    <label for="mensaje" class="text-sm leading-7 text-gray-700">Mensaje</label>
+                    <textarea formControlName="mensaje" id="mensaje" name="mensaje" rows="4"
+                        class="w-full px-3 py-1 text-sm leading-8 font-normal text-gray-900 transition-colors duration-150 ease-in-out bg-white border border-gray-300 rounded-md outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200"
+                        placeholder="Escriba aquí su mensaje..." required> </textarea>
+
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('mensaje')?.touched && contactoForm.get('mensaje')?.errors?.['required']">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p>Este campo es requerido</p>
+                    </div>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('mensaje')?.touched && contactoForm.get('mensaje')?.errors?.['minlength']">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+
+                        <p>Minimo {{ contactoForm.get('mensaje')?.errors?.['minlength']?.requiredLength }}
+                            caracteres en ese campo</p>
+                    </div>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="contactoForm.get('mensaje')?.touched && contactoForm.get('mensaje')?.errors?.['maxlength']">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p> Maximo {{ contactoForm.get('mensaje')?.errors?.['maxlength']?.requiredLength }}
+                            caracteres en este campo</p>
+                    </div>
                 </div>
-                <div class="flex items-start mb-6">
+
+                <div class="flex items-start">
                     <div class="flex items-center h-5">
-                        <input id="check" type="checkbox" value=""
+                        <input formControlName="checkValidacion" id="check" type="checkbox" value=""
                             class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
                             required>
+                        <label for="check" class="ml-2 text-sm font-medium text-gray-900">Acepto <a href="#"
+                                class="text-blue-600 hover:underline">términos y condiciones generales </a> y <a
+                                href="#" class="text-blue-600 hover:underline"> la política de tratamiento de
+                                datos</a>.</label>
                     </div>
-                    <label for="check" class="ml-2 text-sm font-medium text-gray-900">Acepto <a href="#"
-                            class="text-blue-600 hover:underline">términos y condiciones generales </a> y <a href="#"
-                            class="text-blue-600 hover:underline"> la política de tratamiento de
-                            datos</a>.</label>
                 </div>
-                <div class="flex justify-center">
+                <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                    *ngIf="contactoForm.get('checkValidacion')?.touched && contactoForm.get('checkValidacion')?.errors?.['required'] || contactoForm">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <p>Debe aceptar las politicas de tratamiento de datos</p>
+                </div>
+                <div class="flex justify-center mt-6">
                     <button type="submit"
                         class="px-40 py-2 text-lg text-white bg-blue-700 border-0 rounded-full focus:outline-none hover:bg-blue-900">Enviar</button>
                 </div>

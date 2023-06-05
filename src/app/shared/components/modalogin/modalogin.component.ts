@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
 import { NgToastService } from 'ng-angular-popup';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-modalogin',
@@ -10,56 +11,56 @@ import { Router } from '@angular/router';
   styleUrls: ['./modalogin.component.scss'],
 })
 export class ModaloginComponent implements OnInit {
-  loginData = {
-    username: '',
-    password: '',
-  };
+  loginForm!: FormGroup;
+  
+
+  // loginData = {
+  //   username: '',
+  //   password: '',
+  // };
 
   constructor(
+    private formBuilder: FormBuilder,
     private modalSS: ModalService,
     private toast: NgToastService,
     private loginService: LoginService,
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loginForm = this.initForm();
+  }
 
   closeModal() {
     this.modalSS.$modal.emit(false);
   }
 
+  initForm(): FormGroup {
+    return this.formBuilder.group({
+      usuario: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(20),
+        ],
+      ],
+      contrasena: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(20),
+        ],
+      ],
+    });
+  }
+
   formSubmit() {
-    if (
-      this.loginData.username.trim() == '' ||
-      this.loginData.username.trim() == null
-    ) {
-      this.toast.error({
-        detail: 'Mensaje',
-        summary: 'El usuario es requerido',
-        sticky: true,
-        position: 'tr',
-        duration: 3000,
-      });
-      return;
-    }
-
-    if (
-      this.loginData.password.trim() == '' ||
-      this.loginData.password.trim() == null
-    ) {
-      this.toast.error({
-        detail: 'Mensaje',
-        summary: 'La contraseña es requerido',
-        sticky: true,
-        position: 'tr',
-        duration: 3000,
-      });
-      return;
-    }
-
-    this.loginService.generateToken(this.loginData).subscribe(
+    let Form = JSON.stringify(this.loginForm.value);
+    this.loginService.generateToken(this.loginForm).subscribe(
       (data: any) => {
-        console.log(data);
+        console.log(Form);
 
         this.loginService.loginUser(data.token);
         this.loginService.getCurrentUser().subscribe((user: any) => {
@@ -87,18 +88,17 @@ export class ModaloginComponent implements OnInit {
         });
       },
       (error) => {
-        console.log('Este error', error);
+        console.log('Este error:', error);
         this.toast.error({
           detail: 'Mensaje',
-          summary: 'Datos de acceso invalidos, intentarlo nuevamente',
+          summary: 'Datos de acceso invalidos',
           sticky: true,
           position: 'tr',
-          duration: 3000,
+          duration: 15000,
         });
         return;
       }
     );
-
     this.closeModal();
   }
 }

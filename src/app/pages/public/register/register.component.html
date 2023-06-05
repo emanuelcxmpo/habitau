@@ -10,15 +10,15 @@
             </h1>
 
             <p class="text-gray-500 ">
-                Ingresa los datos para crear tu cuenta
+                Ingresa tus datos para registrar tu información en HabitaU
             </p>
 
             <h3 class="my-4 text-xl font-semibold text-gray-800">
                 Datos básicos
             </h3>
 
-
-            <form #formularioRegister="ngForm" (ngSubmit)="formSubmit(formularioRegister)">
+            <!-- #formularioRegister="ngForm"  -->
+            <form [formGroup]="registerForm" (ngSubmit)="enviarData()" novalidate>
                 <div class="gap-6 mb-6">
                     <label for="country" class="block mb-2 text-sm font-medium text-gray-900">
                         Perfil de usuario
@@ -26,8 +26,8 @@
 
                     <ul class="grid w-full gap-6 md:grid-cols-2">
                         <li>
-                            <input type="radio" id="estudiante" name="tipo" value="2" class="hidden peer" name="tipo"
-                                required>
+                            <input formControlName="perfilUsuario" type="radio" id="estudiante" [value]="2"
+                                class="hidden peer" name="perfilUsuario" required>
 
                             <label for="estudiante"
                                 class="inline-flex items-center justify-between w-full px-3 py-2 text-blue-500 border border-blue-500 rounded-full cursor-pointer peer-checked:border-blue-600 peer-checked:text-white peer-checked:bg-blue-700 hover:text-blue-500 hover:bg-gray-100">
@@ -47,8 +47,8 @@
                         </li>
 
                         <li>
-                            <input type="radio" id="arrendatario" name="tipo" value="3" class="hidden peer" name="tipo"
-                                required>
+                            <input formControlName="perfilUsuario" type="radio" id="arrendatario" [value]="3"
+                                class="hidden peer" name="perfilUsuario" required>
 
                             <label for="arrendatario"
                                 class="inline-flex items-center justify-between w-full px-3 py-2 text-blue-500 border border-blue-500 rounded-full cursor-pointer peer-checked:border-blue-600 peer-checked:text-white peer-checked:bg-blue-700 hover:text-blue-500 hover:bg-gray-100">
@@ -70,48 +70,179 @@
                     </ul>
                 </div>
 
-                <!-- <div>
-                        <label for="country" class="block mb-2 text-sm font-medium text-gray-900">
-                            Tipo de documento</label>
-                        <select id="country" name="country" autocomplete="country"
-                        class="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                        <option>- Selecciona una opción -</option>
-                        <option>Tarjeta de identidad</option>
-                            <option>Cedula de ciudadania</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="document" class="block mb-2 text-sm font-medium text-gray-900">Número de
-                            identidad</label>
-                            <input type="number" id="document"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                            placeholder="1002392080" pattern="[0-9]{3}" required>
-                        </div> -->
                 <div class="grid gap-6 mb-6 md:grid-cols-2">
                     <div>
-                        <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre(s)</label>
-                        <input type="text" id="nombre" [(ngModel)]="user.nombres" name="nombre"
+                        <label for="nombres" class="block mb-2 text-sm font-medium text-gray-900">Nombre(s)</label>
+                        <input formControlName="nombres" type="text" id="nombres" name="nombres"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             placeholder="Digite su nombre" required>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('nombres')?.touched && registerForm.get('nombres')?.errors?.['required']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p>Este campo es requerido</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('nombres')?.touched && registerForm.get('nombres')?.errors?.['minlength']">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <p>Minimo {{ registerForm.get('nombres')?.errors?.['minlength']?.requiredLength }}
+                                caracteres en ese campo</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('nombres')?.touched && registerForm.get('nombres')?.errors?.['maxlength']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p> Maximo {{ registerForm.get('nombres')?.errors?.['maxlength']?.requiredLength }}
+                                caracteres en este campo</p>
+                        </div>
                     </div>
                     <div>
                         <label for="apellidos" class="block mb-2 text-sm font-medium text-gray-900 ">Apellidos</label>
-                        <input type="text" id="apellidos" [(ngModel)]="user.apellidos" name="apellidos"
+                        <input formControlName="apellidos" type="text" id="apellidos" name="apellidos" name="apellidos"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             placeholder="Digite sus apellidos" required>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('apellidos')?.touched && registerForm.get('apellidos')?.errors?.['required']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p>Este campo es requerido</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('apellidos')?.touched && registerForm.get('apellidos')?.errors?.['minlength']">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <p>Minimo {{ registerForm.get('apellidos')?.errors?.['minlength']?.requiredLength }}
+                                caracteres en ese campo</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('apellidos')?.touched && registerForm.get('apellidos')?.errors?.['maxlength']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p> Maximo {{ registerForm.get('apellidos')?.errors?.['maxlength']?.requiredLength }}
+                                caracteres en este campo</p>
+                        </div>
                     </div>
                     <div>
                         <label for="telefono" class="block mb-2 text-sm font-medium text-gray-900">Teléfono</label>
-                        <input type="number" id="telefono" [(ngModel)]="user.telefono" name="telefono"
+                        <input formControlName="telefono" type="text" id="telefono" name="telefono"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             placeholder="3004567890" required>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('telefono')?.touched && registerForm.get('telefono')?.errors?.['required']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p>Este campo es requerido</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('telefono')?.touched && registerForm.get('telefono')?.errors?.['minlength']">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <p>Minimo {{ registerForm.get('telefono')?.errors?.['minlength']?.requiredLength }}
+                                caracteres en ese campo</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('telefono')?.touched && registerForm.get('telefono')?.errors?.['maxlength']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p> Maximo {{ registerForm.get('telefono')?.errors?.['maxlength']?.requiredLength }}
+                                caracteres en este campo</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('telefono')?.touched && registerForm.get('telefono')?.errors?.['pattern']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <p>Ingrese un numero de telefono valido</p>
+                        </div>
                     </div>
                     <div>
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Correo
                             electrónico</label>
-                        <input type="email" id="email" [(ngModel)]="user.email" name="email"
+                        <input formControlName="correoElectronico" type="email" id="email" name="email"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             placeholder="nombre@correo.com" required>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('correoElectronico')?.touched && registerForm.get('correoElectronico')?.errors?.['required']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p>Este campo es requerido</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('correoElectronico')?.touched && registerForm.get('correoElectronico')?.errors?.['minlength']">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <p>Minimo {{ registerForm.get('correoElectronico')?.errors?.['minlength']?.requiredLength }}
+                                caracteres en ese campo</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('correoElectronico')?.touched && registerForm.get('correoElectronico')?.errors?.['pattern']">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <p>Ingrese un correo electronico valido</p>
+                        </div>
                     </div>
                 </div>
 
@@ -122,27 +253,115 @@
                 <div class="grid gap-6 mb-6 md:grid-cols-2">
                     <div>
                         <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Usuario</label>
-                        <input type="text" id="username" [(ngModel)]="user.username" name="username"
+                        <input formControlName="usuario" type="text" id="username" name="username"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             placeholder="Digite su usuario" required>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('usuario')?.touched && registerForm.get('usuario')?.errors?.['required']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p>Este campo es requerido</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('usuario')?.touched && registerForm.get('usuario')?.errors?.['minlength']">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <p>Minimo {{ registerForm.get('usuario')?.errors?.['minlength']?.requiredLength }}
+                                caracteres en ese campo</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('usuario')?.touched && registerForm.get('usuario')?.errors?.['maxlength']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p> Maximo {{ registerForm.get('usuario')?.errors?.['usuario']?.requiredLength }}
+                                caracteres en este campo</p>
+                        </div>
                     </div>
 
                     <div>
                         <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Contraseña</label>
-                        <input type="password" id="password" [(ngModel)]="user.password" name="password"
+                        <input formControlName="contrasena" type="password" id="password" name="password"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             placeholder="•••••••••" required>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('contrasena')?.touched && registerForm.get('contrasena')?.errors?.['required']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p>Este campo es requerido</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('contrasena')?.touched && registerForm.get('contrasena')?.errors?.['minlength']">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <p>Minimo {{ registerForm.get('contrasena')?.errors?.['minlength']?.requiredLength }}
+                                caracteres en ese campo</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('contrasena')?.touched && registerForm.get('contrasena')?.errors?.['maxlength']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p> Maximo {{ registerForm.get('contrasena')?.errors?.['maxlength']?.requiredLength }}
+                                caracteres en este campo</p>
+                        </div>
+                        <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                            *ngIf="registerForm.get('contrasena')?.touched && registerForm.get('contrasena')?.errors?.['pattern']">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <p>La contraseña debe contener al menos una letra mayúscula, una minúscula y un número</p>
+                        </div>
                     </div>
                 </div>
                 <div class="flex items-start mb-6">
                     <div class="flex items-center h-5">
-                        <input id="check" type="checkbox" value="" required
+                        <input formControlName="checkValidacion" id="check" type="checkbox" value="" required
                             class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300">
                     </div>
                     <label for="check" class="ml-2 text-sm font-medium text-gray-900">Acepto <a href="#"
                             class="text-blue-600 hover:underline">términos y condiciones generales </a> y <a href="#"
                             class="text-blue-600 hover:underline"> la política de tratamiento de
                             datos</a>.</label>
+                    <div class="flex gap-1 text-red-500 text-xs italic mt-2"
+                        *ngIf="registerForm.get('checkValidacion')?.touched && registerForm.get('checkValidacion')?.errors?.['required']">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p>Debe aceptar las politicas de tratamiento de datos</p>
+                    </div>
                 </div>
                 <div class="grid w-full gap-6 md:grid-cols-2">
                     <button type="submit"

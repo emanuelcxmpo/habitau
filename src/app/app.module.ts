@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { authInterceptorProviders } from './services/auth.interceptor';
@@ -32,6 +33,7 @@ import { AdminprofileComponent } from './pages/private/adminprofile/adminprofile
 import { AdminuniversitiesComponent } from './pages/private/adminuniversities/adminuniversities.component';
 import { AdmintipopropiedadesComponent } from './pages/private/admintipopropiedades/admintipopropiedades.component';
 import { AdminambienteComponent } from './pages/private/adminambiente/adminambiente.component';
+import { ContactnavComponent } from './pages/public/contactnav/contactnav.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,7 @@ import { AdminambienteComponent } from './pages/private/adminambiente/adminambie
     AdminuniversitiesComponent,
     AdmintipopropiedadesComponent,
     AdminambienteComponent,
+    ContactnavComponent,
   ],
   imports: [
     CommonModule,
@@ -69,10 +72,9 @@ import { AdminambienteComponent } from './pages/private/adminambiente/adminambie
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgToastModule
+    NgToastModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
 })
-
 export class AppModule {}

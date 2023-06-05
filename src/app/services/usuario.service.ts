@@ -8,8 +8,8 @@ import baseUrl from './helper';
 export class UsuarioService {
   constructor(private httpClient: HttpClient) {}
 
-  public registroUsuario(user: any) {
-    return this.httpClient.post(`${baseUrl}/usuarios/`, user);
+  public registroUsuario(registerForm: any) {
+    return this.httpClient.post(`${baseUrl}/usuarios/`, registerForm);
   }
 
   public eliminarUsuario(userId:any){
