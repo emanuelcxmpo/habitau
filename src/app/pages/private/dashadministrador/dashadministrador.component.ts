@@ -5,16 +5,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dashadministrador',
   templateUrl: './dashadministrador.component.html',
-  styleUrls: ['./dashadministrador.component.scss']
+  styleUrls: ['./dashadministrador.component.scss'],
 })
 export class DashadministradorComponent implements OnInit {
-
-  constructor(public login: LoginService, private router: Router) { }
+  constructor(public login: LoginService, private router: Router) {}
   titulo: string | undefined;
   user: any = null;
 
   ngOnInit(): void {
-    this.user = this.login.getUser();
+    this.user = this.login.isLogged;
     this.router.events.subscribe((val) => {
       if (this.router.url.includes('/administrador/home')) {
         this.titulo = 'Inicio';

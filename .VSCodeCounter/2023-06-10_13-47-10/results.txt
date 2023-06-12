@@ -1,0 +1,236 @@
+Date : 2023-06-10 13:47:10
+Directory : c:\habitau
+Total : 162 files,  29086 codes, 341 comments, 816 blanks, all 30243 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          6 |     21,238 |          2 |          5 |     21,245 |
+| HTML               |         32 |      5,792 |        149 |        287 |      6,228 |
+| TypeScript         |         88 |      1,905 |        182 |        469 |      2,556 |
+| SCSS               |         32 |         57 |          0 |         37 |         94 |
+| JavaScript         |          2 |         49 |          7 |          3 |         59 |
+| JSON with Comments |          1 |         31 |          1 |          1 |         33 |
+| Markdown           |          1 |         14 |          0 |         14 |         28 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                         | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                            |        162 |     29,086 |        341 |        816 |     30,243 |
+| . (Files)                                                                                    |          9 |     21,195 |         10 |         23 |     21,228 |
+| server                                                                                       |          1 |        137 |          0 |          0 |        137 |
+| src                                                                                          |        152 |      7,754 |        331 |        793 |      8,878 |
+| src (Files)                                                                                  |          5 |         54 |         51 |         14 |        119 |
+| src\app                                                                                      |        145 |      7,694 |        269 |        775 |      8,738 |
+| src\app (Files)                                                                              |          6 |        244 |          0 |         15 |        259 |
+| src\app\pages                                                                                |         80 |      4,806 |        141 |        440 |      5,387 |
+| src\app\pages\private                                                                        |         48 |      1,747 |          4 |        185 |      1,936 |
+| src\app\pages\private\adminambiente                                                          |          4 |         30 |          0 |         13 |         43 |
+| src\app\pages\private\administrador                                                          |          4 |         95 |          0 |         14 |        109 |
+| src\app\pages\private\adminprofile                                                           |          4 |        118 |          0 |         12 |        130 |
+| src\app\pages\private\admintipopropiedades                                                   |          4 |         30 |          0 |         12 |         42 |
+| src\app\pages\private\adminuniversities                                                      |          4 |         30 |          0 |         13 |         43 |
+| src\app\pages\private\dashadministrador                                                      |          4 |        282 |          0 |         16 |        298 |
+| src\app\pages\private\dasharrendatario                                                       |          4 |        246 |          1 |         16 |        263 |
+| src\app\pages\private\formpropiedad                                                          |          4 |        324 |          0 |         28 |        352 |
+| src\app\pages\private\formusuario                                                            |          4 |        149 |          2 |         16 |        167 |
+| src\app\pages\private\home                                                                   |          4 |        104 |          0 |         13 |        117 |
+| src\app\pages\private\profile                                                                |          4 |        182 |          1 |         17 |        200 |
+| src\app\pages\private\propiedades                                                            |          4 |        157 |          0 |         15 |        172 |
+| src\app\pages\public                                                                         |         32 |      3,059 |        137 |        255 |      3,451 |
+| src\app\pages\public\aboutnav                                                                |          4 |        214 |         66 |         28 |        308 |
+| src\app\pages\public\contactnav                                                              |          4 |        554 |          0 |         29 |        583 |
+| src\app\pages\public\explorenav                                                              |          4 |        479 |         59 |         41 |        579 |
+| src\app\pages\public\forgotpassword                                                          |          4 |        178 |          4 |         16 |        198 |
+| src\app\pages\public\pagenotfound                                                            |          4 |         57 |          0 |         13 |         70 |
+| src\app\pages\public\register                                                                |          4 |        456 |          1 |         47 |        504 |
+| src\app\pages\public\rentnav                                                                 |          4 |        392 |          7 |         33 |        432 |
+| src\app\pages\public\spacesnav                                                               |          4 |        729 |          0 |         48 |        777 |
+| src\app\services                                                                             |         18 |        347 |         39 |         95 |        481 |
+| src\app\shared                                                                               |         41 |      2,297 |         89 |        225 |      2,611 |
+| src\app\shared\components                                                                    |         40 |      2,281 |         89 |        222 |      2,592 |
+| src\app\shared\components\footer                                                             |          4 |        165 |          0 |         28 |        193 |
+| src\app\shared\components\header                                                             |          4 |        380 |         31 |         36 |        447 |
+| src\app\shared\components\hero                                                               |          4 |        144 |          4 |         19 |        167 |
+| src\app\shared\components\modalogin                                                          |          4 |        324 |         54 |         23 |        401 |
+| src\app\shared\components\sectionfive                                                        |          4 |        316 |          0 |         14 |        330 |
+| src\app\shared\components\sectionfour                                                        |          4 |        130 |          0 |         10 |        140 |
+| src\app\shared\components\sectionone                                                         |          4 |        558 |          0 |         42 |        600 |
+| src\app\shared\components\sectionsix                                                         |          4 |         68 |          0 |         16 |         84 |
+| src\app\shared\components\sectionthree                                                       |          4 |         92 |          0 |         13 |        105 |
+| src\app\shared\components\sectiontwo                                                         |          4 |        104 |          0 |         21 |        125 |
+| src\app\shared\models                                                                        |          1 |         16 |          0 |          3 |         19 |
+| src\environments                                                                             |          2 |          6 |         11 |          4 |         21 |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                     | language           | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\habitau\README.md                                                                         | Markdown           |         14 |          0 |         14 |         28 |
+| c:\habitau\angular.json                                                                      | JSON               |        110 |          0 |          1 |        111 |
+| c:\habitau\karma.conf.js                                                                     | JavaScript         |         37 |          6 |          2 |         45 |
+| c:\habitau\package-lock.json                                                                 | JSON               |     20,914 |          0 |          1 |     20,915 |
+| c:\habitau\package.json                                                                      | JSON               |         46 |          0 |          1 |         47 |
+| c:\habitau\server\db.json                                                                    | JSON               |        137 |          0 |          0 |        137 |
+| c:\habitau\src\app\app-routing.module.ts                                                     | TypeScript         |        120 |          0 |          3 |        123 |
+| c:\habitau\src\app\app.component.html                                                        | HTML               |          4 |          0 |          1 |          5 |
+| c:\habitau\src\app\app.component.scss                                                        | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\app.component.spec.ts                                                     | TypeScript         |         31 |          0 |          5 |         36 |
+| c:\habitau\src\app\app.component.ts                                                          | TypeScript         |          9 |          0 |          2 |         11 |
+| c:\habitau\src\app\app.module.ts                                                             | TypeScript         |         80 |          0 |          3 |         83 |
+| c:\habitau\src\app\pages\private\adminambiente\adminambiente.component.html                  | HTML               |          1 |          0 |          1 |          2 |
+| c:\habitau\src\app\pages\private\adminambiente\adminambiente.component.scss                  | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\private\adminambiente\adminambiente.component.spec.ts               | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\adminambiente\adminambiente.component.ts                    | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\pages\private\administrador\administrador.component.html                  | HTML               |         66 |          0 |          2 |         68 |
+| c:\habitau\src\app\pages\private\administrador\administrador.component.scss                  | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\private\administrador\administrador.component.spec.ts               | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\administrador\administrador.component.ts                    | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\pages\private\adminprofile\adminprofile.component.html                    | HTML               |         68 |          0 |          1 |         69 |
+| c:\habitau\src\app\pages\private\adminprofile\adminprofile.component.scss                    | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\private\adminprofile\adminprofile.component.spec.ts                 | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\adminprofile\adminprofile.component.ts                      | TypeScript         |         32 |          0 |          4 |         36 |
+| c:\habitau\src\app\pages\private\admintipopropiedades\admintipopropiedades.component.html    | HTML               |          1 |          0 |          0 |          1 |
+| c:\habitau\src\app\pages\private\admintipopropiedades\admintipopropiedades.component.scss    | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\private\admintipopropiedades\admintipopropiedades.component.spec.ts | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\admintipopropiedades\admintipopropiedades.component.ts      | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\pages\private\adminuniversities\adminuniversities.component.html          | HTML               |          1 |          0 |          1 |          2 |
+| c:\habitau\src\app\pages\private\adminuniversities\adminuniversities.component.scss          | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\private\adminuniversities\adminuniversities.component.spec.ts       | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\adminuniversities\adminuniversities.component.ts            | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\pages\private\dashadministrador\dashadministrador.component.html          | HTML               |        229 |          0 |          5 |        234 |
+| c:\habitau\src\app\pages\private\dashadministrador\dashadministrador.component.scss          | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\private\dashadministrador\dashadministrador.component.spec.ts       | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\dashadministrador\dashadministrador.component.ts            | TypeScript         |         35 |          0 |          4 |         39 |
+| c:\habitau\src\app\pages\private\dasharrendatario\dasharrendatario.component.html            | HTML               |        196 |          0 |          5 |        201 |
+| c:\habitau\src\app\pages\private\dasharrendatario\dasharrendatario.component.scss            | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\private\dasharrendatario\dasharrendatario.component.spec.ts         | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\dasharrendatario\dasharrendatario.component.ts              | TypeScript         |         32 |          1 |          4 |         37 |
+| c:\habitau\src\app\pages\private\formpropiedad\formpropiedad.component.html                  | HTML               |        279 |          0 |         16 |        295 |
+| c:\habitau\src\app\pages\private\formpropiedad\formpropiedad.component.scss                  | SCSS               |          8 |          0 |          2 |         10 |
+| c:\habitau\src\app\pages\private\formpropiedad\formpropiedad.component.spec.ts               | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\formpropiedad\formpropiedad.component.ts                    | TypeScript         |         19 |          0 |          4 |         23 |
+| c:\habitau\src\app\pages\private\formusuario\formusuario.component.html                      | HTML               |        110 |          1 |          6 |        117 |
+| c:\habitau\src\app\pages\private\formusuario\formusuario.component.scss                      | SCSS               |          8 |          0 |          1 |          9 |
+| c:\habitau\src\app\pages\private\formusuario\formusuario.component.spec.ts                   | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\formusuario\formusuario.component.ts                        | TypeScript         |         13 |          1 |          3 |         17 |
+| c:\habitau\src\app\pages\private\home\home.component.html                                    | HTML               |         75 |          0 |          1 |         76 |
+| c:\habitau\src\app\pages\private\home\home.component.scss                                    | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\private\home\home.component.spec.ts                                 | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\home\home.component.ts                                      | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\pages\private\profile\profile.component.html                              | HTML               |        117 |          0 |          4 |        121 |
+| c:\habitau\src\app\pages\private\profile\profile.component.scss                              | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\private\profile\profile.component.spec.ts                           | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\profile\profile.component.ts                                | TypeScript         |         47 |          1 |          6 |         54 |
+| c:\habitau\src\app\pages\private\propiedades\propiedades.component.html                      | HTML               |        128 |          0 |          3 |        131 |
+| c:\habitau\src\app\pages\private\propiedades\propiedades.component.scss                      | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\private\propiedades\propiedades.component.spec.ts                   | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\private\propiedades\propiedades.component.ts                        | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\pages\public\aboutnav\aboutnav.component.html                             | HTML               |        185 |         66 |         16 |        267 |
+| c:\habitau\src\app\pages\public\aboutnav\aboutnav.component.scss                             | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\public\aboutnav\aboutnav.component.spec.ts                          | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\public\aboutnav\aboutnav.component.ts                               | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\pages\public\contactnav\contactnav.component.html                         | HTML               |        449 |          0 |         13 |        462 |
+| c:\habitau\src\app\pages\public\contactnav\contactnav.component.scss                         | SCSS               |          8 |          0 |          2 |         10 |
+| c:\habitau\src\app\pages\public\contactnav\contactnav.component.spec.ts                      | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\public\contactnav\contactnav.component.ts                           | TypeScript         |         79 |          0 |          8 |         87 |
+| c:\habitau\src\app\pages\public\explorenav\explorenav.component.html                         | HTML               |        428 |         59 |         30 |        517 |
+| c:\habitau\src\app\pages\public\explorenav\explorenav.component.scss                         | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\public\explorenav\explorenav.component.spec.ts                      | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\public\explorenav\explorenav.component.ts                           | TypeScript         |         33 |          0 |          4 |         37 |
+| c:\habitau\src\app\pages\public\forgotpassword\forgotpassword.component.html                 | HTML               |        127 |          4 |          3 |        134 |
+| c:\habitau\src\app\pages\public\forgotpassword\forgotpassword.component.scss                 | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\public\forgotpassword\forgotpassword.component.spec.ts              | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\public\forgotpassword\forgotpassword.component.ts                   | TypeScript         |         33 |          0 |          6 |         39 |
+| c:\habitau\src\app\pages\public\pagenotfound\pagenotfound.component.html                     | HTML               |         28 |          0 |          1 |         29 |
+| c:\habitau\src\app\pages\public\pagenotfound\pagenotfound.component.scss                     | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\public\pagenotfound\pagenotfound.component.spec.ts                  | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\public\pagenotfound\pagenotfound.component.ts                       | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\pages\public\register\register.component.html                             | HTML               |        343 |          1 |         34 |        378 |
+| c:\habitau\src\app\pages\public\register\register.component.scss                             | SCSS               |          8 |          0 |          2 |         10 |
+| c:\habitau\src\app\pages\public\register\register.component.spec.ts                          | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\public\register\register.component.ts                               | TypeScript         |         87 |          0 |          5 |         92 |
+| c:\habitau\src\app\pages\public\rentnav\rentnav.component.html                               | HTML               |        363 |          7 |         21 |        391 |
+| c:\habitau\src\app\pages\public\rentnav\rentnav.component.scss                               | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\public\rentnav\rentnav.component.spec.ts                            | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\public\rentnav\rentnav.component.ts                                 | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\pages\public\spacesnav\spacesnav.component.html                           | HTML               |        700 |          0 |         36 |        736 |
+| c:\habitau\src\app\pages\public\spacesnav\spacesnav.component.scss                           | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\pages\public\spacesnav\spacesnav.component.spec.ts                        | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\pages\public\spacesnav\spacesnav.component.ts                             | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\services\administrador.guard.spec.ts                                      | TypeScript         |         12 |          0 |          5 |         17 |
+| c:\habitau\src\app\services\administrador.guard.ts                                           | TypeScript         |         31 |          0 |          3 |         34 |
+| c:\habitau\src\app\services\arrendatario.guard.spec.ts                                       | TypeScript         |         12 |          0 |          5 |         17 |
+| c:\habitau\src\app\services\arrendatario.guard.ts                                            | TypeScript         |         31 |          5 |          4 |         40 |
+| c:\habitau\src\app\services\auth.interceptor.ts                                              | TypeScript         |         28 |          9 |          5 |         42 |
+| c:\habitau\src\app\services\helper.ts                                                        | TypeScript         |          2 |          0 |          1 |          3 |
+| c:\habitau\src\app\services\login.service.spec.ts                                            | TypeScript         |         12 |          0 |          5 |         17 |
+| c:\habitau\src\app\services\login.service.ts                                                 | TypeScript         |         66 |         25 |         18 |        109 |
+| c:\habitau\src\app\services\modal.service.spec.ts                                            | TypeScript         |         12 |          0 |          5 |         17 |
+| c:\habitau\src\app\services\modal.service.ts                                                 | TypeScript         |          8 |          0 |          4 |         12 |
+| c:\habitau\src\app\services\propiedades.service.spec.ts                                      | TypeScript         |         12 |          0 |          5 |         17 |
+| c:\habitau\src\app\services\propiedades.service.ts                                           | TypeScript         |         15 |          0 |          3 |         18 |
+| c:\habitau\src\app\services\tipopropiedad.service.spec.ts                                    | TypeScript         |         12 |          0 |          5 |         17 |
+| c:\habitau\src\app\services\tipopropiedad.service.ts                                         | TypeScript         |         15 |          0 |          4 |         19 |
+| c:\habitau\src\app\services\universidades.service.spec.ts                                    | TypeScript         |         12 |          0 |          5 |         17 |
+| c:\habitau\src\app\services\universidades.service.ts                                         | TypeScript         |          7 |          0 |          3 |         10 |
+| c:\habitau\src\app\services\usuario.service.spec.ts                                          | TypeScript         |         12 |          0 |          5 |         17 |
+| c:\habitau\src\app\services\usuario.service.ts                                               | TypeScript         |         48 |          0 |         10 |         58 |
+| c:\habitau\src\app\shared\components\footer\footer.component.html                            | HTML               |        136 |          0 |         16 |        152 |
+| c:\habitau\src\app\shared\components\footer\footer.component.scss                            | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\shared\components\footer\footer.component.spec.ts                         | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\shared\components\footer\footer.component.ts                              | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\shared\components\header\header.component.html                            | HTML               |        290 |          6 |         13 |        309 |
+| c:\habitau\src\app\shared\components\header\header.component.scss                            | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\shared\components\header\header.component.spec.ts                         | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\shared\components\header\header.component.ts                              | TypeScript         |         72 |         25 |         16 |        113 |
+| c:\habitau\src\app\shared\components\hero\hero.component.html                                | HTML               |        115 |          4 |          7 |        126 |
+| c:\habitau\src\app\shared\components\hero\hero.component.scss                                | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\shared\components\hero\hero.component.spec.ts                             | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\shared\components\hero\hero.component.ts                                  | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\shared\components\modalogin\modalogin.component.html                      | HTML               |        255 |          1 |          4 |        260 |
+| c:\habitau\src\app\shared\components\modalogin\modalogin.component.scss                      | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\shared\components\modalogin\modalogin.component.spec.ts                   | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\shared\components\modalogin\modalogin.component.ts                        | TypeScript         |         51 |         53 |         12 |        116 |
+| c:\habitau\src\app\shared\components\sectionfive\sectionfive.component.html                  | HTML               |        287 |          0 |          2 |        289 |
+| c:\habitau\src\app\shared\components\sectionfive\sectionfive.component.scss                  | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\shared\components\sectionfive\sectionfive.component.spec.ts               | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\shared\components\sectionfive\sectionfive.component.ts                    | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\shared\components\sectionfour\sectionfour.component.html                  | HTML               |        103 |          0 |          1 |        104 |
+| c:\habitau\src\app\shared\components\sectionfour\sectionfour.component.scss                  | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\shared\components\sectionfour\sectionfour.component.spec.ts               | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\shared\components\sectionfour\sectionfour.component.ts                    | TypeScript         |          9 |          0 |          2 |         11 |
+| c:\habitau\src\app\shared\components\sectionone\sectionone.component.html                    | HTML               |        508 |          0 |         29 |        537 |
+| c:\habitau\src\app\shared\components\sectionone\sectionone.component.scss                    | SCSS               |         22 |          0 |          4 |         26 |
+| c:\habitau\src\app\shared\components\sectionone\sectionone.component.spec.ts                 | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\shared\components\sectionone\sectionone.component.ts                      | TypeScript         |         10 |          0 |          3 |         13 |
+| c:\habitau\src\app\shared\components\sectionsix\sectionsix.component.html                    | HTML               |         39 |          0 |          4 |         43 |
+| c:\habitau\src\app\shared\components\sectionsix\sectionsix.component.scss                    | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\shared\components\sectionsix\sectionsix.component.spec.ts                 | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\shared\components\sectionsix\sectionsix.component.ts                      | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\shared\components\sectionthree\sectionthree.component.html                | HTML               |         63 |          0 |          1 |         64 |
+| c:\habitau\src\app\shared\components\sectionthree\sectionthree.component.scss                | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\shared\components\sectionthree\sectionthree.component.spec.ts             | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\shared\components\sectionthree\sectionthree.component.ts                  | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\shared\components\sectiontwo\sectiontwo.component.html                    | HTML               |         75 |          0 |          9 |         84 |
+| c:\habitau\src\app\shared\components\sectiontwo\sectiontwo.component.scss                    | SCSS               |          0 |          0 |          1 |          1 |
+| c:\habitau\src\app\shared\components\sectiontwo\sectiontwo.component.spec.ts                 | TypeScript         |         18 |          0 |          6 |         24 |
+| c:\habitau\src\app\shared\components\sectiontwo\sectiontwo.component.ts                      | TypeScript         |         11 |          0 |          5 |         16 |
+| c:\habitau\src\app\shared\models\user.interface.ts                                           | TypeScript         |         16 |          0 |          3 |         19 |
+| c:\habitau\src\environments\environment.prod.ts                                              | TypeScript         |          3 |          0 |          1 |          4 |
+| c:\habitau\src\environments\environment.ts                                                   | TypeScript         |          3 |         11 |          3 |         17 |
+| c:\habitau\src\index.html                                                                    | HTML               |         23 |          0 |          1 |         24 |
+| c:\habitau\src\main.ts                                                                       | TypeScript         |          9 |          0 |          3 |         12 |
+| c:\habitau\src\polyfills.ts                                                                  | TypeScript         |          1 |         47 |          6 |         54 |
+| c:\habitau\src\styles.scss                                                                   | SCSS               |          3 |          0 |          0 |          3 |
+| c:\habitau\src\test.ts                                                                       | TypeScript         |         18 |          4 |          4 |         26 |
+| c:\habitau\tailwind.config.js                                                                | JavaScript         |         12 |          1 |          1 |         14 |
+| c:\habitau\tsconfig.app.json                                                                 | JSON               |         14 |          1 |          1 |         16 |
+| c:\habitau\tsconfig.json                                                                     | JSON with Comments |         31 |          1 |          1 |         33 |
+| c:\habitau\tsconfig.spec.json                                                                | JSON               |         17 |          1 |          1 |         19 |
+| Total                                                                                        |                    |     29,086 |        341 |        816 |     30,243 |
++----------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

@@ -34,6 +34,7 @@ import { AdminuniversitiesComponent } from './pages/private/adminuniversities/ad
 import { AdmintipopropiedadesComponent } from './pages/private/admintipopropiedades/admintipopropiedades.component';
 import { AdminambienteComponent } from './pages/private/adminambiente/adminambiente.component';
 import { ContactnavComponent } from './pages/public/contactnav/contactnav.component';
+import { ForgotpasswordComponent } from './pages/public/forgotpassword/forgotpassword.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { ContactnavComponent } from './pages/public/contactnav/contactnav.compon
     AdmintipopropiedadesComponent,
     AdminambienteComponent,
     ContactnavComponent,
+    ForgotpasswordComponent,
   ],
   imports: [
     CommonModule,

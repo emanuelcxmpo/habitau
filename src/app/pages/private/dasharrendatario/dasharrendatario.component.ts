@@ -13,7 +13,7 @@ export class DasharrendatarioComponent implements OnInit {
   constructor(public login: LoginService, private router: Router) {}
 
   ngOnInit(): void {
-    this.user = this.login.getUser();
+    // this.user = this.login.getUser();
     this.router.events.subscribe((val) => {
       if (this.router.url.includes('/arrendatario/home')) {
         this.titulo = 'Inicio';

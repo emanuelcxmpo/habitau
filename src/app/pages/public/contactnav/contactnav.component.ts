@@ -23,13 +23,7 @@ export class ContactnavComponent implements OnInit {
 
   initForm(): FormGroup {
     return this.formBuilder.group({
-      nombreCompleto: [
-        '',
-        [
-          Validators.required,
-          Validators.maxLength(50),
-        ],
-      ],
+      nombreCompleto: ['', [Validators.required, Validators.maxLength(50)]],
       correoElectronico: [
         '',
         [
@@ -61,17 +55,18 @@ export class ContactnavComponent implements OnInit {
   }
 
   envioCorreo() {
-
     let params = {
       email: this.contactoForm.value.correoElectronico,
       asunto: this.contactoForm.value.tipoSolicitud,
-      mensaje: this.contactoForm.value.mensaje, 
-    }
+      mensaje: this.contactoForm.value.mensaje,
+    };
     console.log(params);
 
-    this.httpClient.post('http://localhost:3000/enviar', params).subscribe(res => {
-      console.log(res);
-    })
+    this.httpClient
+      .post('http://localhost:3000/enviar', params)
+      .subscribe((res) => {
+        console.log(res);
+      });
   }
 
   enviarData() {

@@ -17,9 +17,10 @@ import { SpacesnavComponent } from './pages/public/spacesnav/spacesnav.component
 import { ExplorenavComponent } from './pages/public/explorenav/explorenav.component';
 import { AboutnavComponent } from './pages/public/aboutnav/aboutnav.component';
 import { SectiononeComponent } from './shared/components/sectionone/sectionone.component';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdministradorGuard } from './services/administrador.guard';
+import { ForgotpasswordComponent } from './pages/public/forgotpassword/forgotpassword.component';
 
 const routes: Routes = [
   { path: '', component: SectiononeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'spaces', component: SpacesnavComponent },
   { path: 'contact', component: ContactnavComponent },
   { path: 'rent', component: RentnavComponent },
+  { path: 'forgot', component: ForgotpasswordComponent },
   { path: 'register', component: RegisterComponent },
   {
     path: 'estudiante',

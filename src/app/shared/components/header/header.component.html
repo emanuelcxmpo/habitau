@@ -1,162 +1,309 @@
 -component
-<nav class="fixed top-0 left-0 z-20 flex items-center justify-between w-full px-4 py-4 bg-white font-poppins">
-	<a routerLink="" routerLinkActive="true" class="text-3xl font-bold leading-none">
-		<img class="h-10" src="https://i.postimg.cc/xdMpddpN/principal.png" alt="HabitaU">
-	</a>
+<nav
+  class="fixed top-0 left-0 z-20 flex items-center justify-between w-full px-4 py-4 bg-white font-poppins"
+>
+  <a
+    routerLink=""
+    routerLinkActive="true"
+    class="text-3xl font-bold leading-none"
+  >
+    <img
+      class="h-10"
+      src="https://i.postimg.cc/xdMpddpN/principal.png"
+      alt="HabitaU"
+    />
+  </a>
 
-	<div class="lg:hidden">
-		<button class="flex items-center p-3 text-blue-600 navbar-burger">
-			<svg class="block w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-				<title>Mobile menu</title>
-				<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-			</svg>
-		</button>
-	</div>
-	
-	<!-- Se muestra el menú de navegación cuando el usuario no ha iniciado sesión -->
-	<ul id="menuSinLogueo" *ngIf="!login.isLoggedIn()"
-		class="absolute hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-1">
-		<li><a routerLink="rent" routerLinkActive="true"
-				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Arrienda</a>
-		</li>
-		<li><a routerLink="spaces" routerLinkActive="true"
-				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Espacios</a>
-		</li>
-		<li><a routerLink="about" routerLinkActive="true"
-				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Sobre
-				nosotros</a></li>
-		<li><a routerLink="contact" routerLinkActive="true"
-				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Contacto</a>
-		</li>
-	</ul>
+  <div class="lg:hidden">
+    <button class="flex items-center p-3 text-blue-600 navbar-burger">
+      <svg
+        class="block w-4 h-4 fill-current"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Mobile menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+      </svg>
+    </button>
+  </div>
 
-	<!-- Se muestra el menú de navegación cuando el usuario ha iniciado sesión -->
-	<ul *ngIf="login.isLoggedIn()"
-		class="absolute hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-1">
-		<li><a routerLink="explore" routerLinkActive="true" 
-				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Explorar
-				habitaciones</a></li>
-		<li><a routerLink="rent" routerLinkActive="true"
-				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Arrienda</a>
-		</li>
-		<li><a routerLink="spaces" routerLinkActive="true"
-				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Espacios</a>
-		</li>
-		<li><a routerLink="about" routerLinkActive="true"
-				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Sobre
-				nosotros</a></li>
-		<li><a routerLink="contact" routerLinkActive="true"
-				class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200">Contacto</a>
-		</li>
-	</ul>
+  <!-- Se muestra el menú de navegación cuando el usuario no ha iniciado sesión -->
+  <ul
+    id="menuSinLogueo"
+    *ngIf="login.isLogged"
+    class="absolute hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-1"
+  >
+    <li>
+      <a
+        routerLink="rent"
+        routerLinkActive="true"
+        class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
+        >Arrienda</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="spaces"
+        routerLinkActive="true"
+        class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
+        >Espacios</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="about"
+        routerLinkActive="true"
+        class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
+        >Sobre nosotros</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="contact"
+        routerLinkActive="true"
+        class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
+        >Contacto</a
+      >
+    </li>
+  </ul>
 
-	<!--Si NO está iniciado el usuario abre la ventana para iniciar sesión-->
-	<button (click)="openModal()" *ngIf="!login.isLoggedIn()"
-		class="hidden px-6 py-2 text-sm font-semibold text-blue-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto lg:mr-3 outline outline-1 outline-blue-600 hover:bg-blue-600 hover:text-white">Publicar
-	</button>
+  <!-- Se muestra el menú de navegación cuando el usuario ha iniciado sesión -->
+  <ul
+    *ngIf="!login.isLogged"
+    class="absolute hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-1"
+  >
+    <li>
+      <a
+        routerLink="explore"
+        routerLinkActive="true"
+        class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
+        >Explorar habitaciones</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="rent"
+        routerLinkActive="true"
+        class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
+        >Arrienda</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="spaces"
+        routerLinkActive="true"
+        class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
+        >Espacios</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="about"
+        routerLinkActive="true"
+        class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
+        >Sobre nosotros</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="contact"
+        routerLinkActive="true"
+        class="hidden px-6 py-2.5 text-sm font-medium text-gray-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto hover:bg-gray-200"
+        >Contacto</a
+      >
+    </li>
+  </ul>
 
-	<!--Si está iniciado el ARRENDATARIO me lleva a una la pagina para publicar una propiedad-->
-	<button (click)="publicar()" *ngIf="login.isLoggedIn()"
-		class="hidden px-6 py-2 text-sm font-semibold text-blue-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto lg:mr-3 outline outline-1 outline-blue-600 hover:bg-blue-600 hover:text-white">Publicar
-	</button>
+  <!--Si NO está iniciado el usuario abre la ventana para iniciar sesión-->
+  <button
+    (click)="openModal()"
+    *ngIf="login.isLogged"
+    class="hidden px-6 py-2 text-sm font-semibold text-blue-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto lg:mr-3 outline outline-1 outline-blue-600 hover:bg-blue-600 hover:text-white"
+  >
+    Publicar
+  </button>
 
+  <!--Si está iniciado el ARRENDATARIO me lleva a una la pagina para publicar una propiedad-->
+  <button
+    *ngIf="!login.isLogged"
+    class="hidden px-6 py-2 text-sm font-semibold text-blue-600 transition duration-200 rounded-full lg:inline-block lg:ml-auto lg:mr-3 outline outline-1 outline-blue-600 hover:bg-blue-600 hover:text-white"
+  >
+    Publicar
+  </button>
 
-	<!--Si está iniciado el usuario me lleva a una ventana depende cual sea el usuario-->
-	<button (click)="perfil()" routerLinkActive="true" *ngIf="login.isLoggedIn()"
-		class="hidden px-6 py-2.5 text-sm font-semibold text-white transition duration-200 hover:bg-green-800 bg-green-600 rounded-full lg:inline-block">Perfil
-	</button>
+  <!--Si está iniciado el usuario me lleva a una ventana depende cual sea el usuario-->
+  <button
+    routerLinkActive="true"
+    *ngIf="!login.isLogged"
+    class="hidden px-6 py-2.5 text-sm font-semibold text-white transition duration-200 hover:bg-green-800 bg-green-600 rounded-full lg:inline-block"
+  >
+    Perfil
+  </button>
 
-	<!--Si NO está iniciado el usuario abre la ventana para iniciar sesión-->
-	<button (click)="openModal()" *ngIf="!login.isLoggedIn()"
-		class="hidden px-6 py-2.5 text-sm font-semibold text-white transition duration-200 hover:bg-blue-800 bg-blue-600 rounded-full lg:inline-block">Inciar
-		sesión
-	</button>
+  <!--Si NO está iniciado el usuario abre la ventana para iniciar sesión-->
+  <button
+    (click)="openModal()"
+    *ngIf="login.isLogged"
+    class="hidden px-6 py-2.5 text-sm font-semibold text-white transition duration-200 hover:bg-blue-800 bg-blue-600 rounded-full lg:inline-block"
+  >
+    Inciar sesión
+  </button>
 </nav>
 
 <div class="relative z-50 hidden navbar-menu font-poppins">
-	<div class="fixed inset-0 bg-gray-800 opacity-25 navbar-backdrop"></div>
-	<nav
-		class="fixed top-0 bottom-0 left-0 flex flex-col w-screen max-w-sm px-6 py-6 overflow-y-auto bg-white border-r">
-		<div class="flex items-center mb-8">
-			<a routerLink="" routerLinkActive="true" class="mr-auto text-3xl font-bold leading-none navbar-close">
-				<img class="h-10" src="https://i.postimg.cc/xdMpddpN/principal.png" alt="HabitaU">
-			</a>
-			<button class="navbar-close">
-				<svg class="w-6 h-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
-					fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-					</path>
-				</svg>
-			</button>
-		</div>
-		<div>
-			<ul *ngIf="!login.isLoggedIn()">
-				<li class="mb-3">
-					<a routerLink="rent" routerLinkActive="true"
-						class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl">Arrienda</a>
-				</li>
-				<li class="mb-3">
-					<a routerLink="spaces" routerLinkActive="true"
-						class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl">Espacios</a>
-				</li>
-				<li class="mb-3">
-					<a routerLink="about" routerLinkActive="true"
-						class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl">Sobre
-						nosotros</a>
-				</li>
-				<li class="mb-1">
-					<a routerLink="contact" routerLinkActive="true"
-						class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl">Contacto</a>
-				</li>
-			</ul>
+  <div class="fixed inset-0 bg-gray-800 opacity-25 navbar-backdrop"></div>
+  <nav
+    class="fixed top-0 bottom-0 left-0 flex flex-col w-screen max-w-sm px-6 py-6 overflow-y-auto bg-white border-r"
+  >
+    <div class="flex items-center mb-8">
+      <a
+        routerLink=""
+        routerLinkActive="true"
+        class="mr-auto text-3xl font-bold leading-none navbar-close"
+      >
+        <img
+          class="h-10"
+          src="https://i.postimg.cc/xdMpddpN/principal.png"
+          alt="HabitaU"
+        />
+      </a>
+      <button class="navbar-close">
+        <svg
+          class="w-6 h-6 text-gray-400 cursor-pointer hover:text-gray-500"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div>
+      <ul *ngIf="login.isLogged">
+        <li class="mb-3">
+          <a
+            routerLink="rent"
+            routerLinkActive="true"
+            class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl"
+            >Arrienda</a
+          >
+        </li>
+        <li class="mb-3">
+          <a
+            routerLink="spaces"
+            routerLinkActive="true"
+            class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl"
+            >Espacios</a
+          >
+        </li>
+        <li class="mb-3">
+          <a
+            routerLink="about"
+            routerLinkActive="true"
+            class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl"
+            >Sobre nosotros</a
+          >
+        </li>
+        <li class="mb-1">
+          <a
+            routerLink="contact"
+            routerLinkActive="true"
+            class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl"
+            >Contacto</a
+          >
+        </li>
+      </ul>
 
-			<ul *ngIf="login.isLoggedIn()">
-				<li class="mb-3">
-					<a routerLink="explore" routerLinkActive="true"
-						class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl">Explorar
-						habitaciones</a>
-				</li>
-				<li class="mb-3">
-					<a routerLink="rent" routerLinkActive="true"
-						class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl">Arrienda</a>
-				</li>
-				<li class="mb-3">
-					<a routerLink="spaces" routerLinkActive="true"
-						class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl">Espacios</a>
-				</li>
-				<li class="mb-3">
-					<a routerLink="about" routerLinkActive="true"
-						class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl">Sobre
-						nosotros</a>
-				</li>
-				<li class="mb-1">
-					<a routerLink="contact" routerLinkActive="true"
-						class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl">Contacto</a>
-				</li>
-			</ul>
-		</div>
-		<div class="mt-auto">
-			<div class="pt-6">
-				<button (click)="openModal()" *ngIf="!login.isLoggedIn()"
-					class="block w-full px-4 py-3 mb-3 text-xs font-medium leading-none text-center text-gray-600 bg-gray-100 hover:bg-gray-100 rounded-xl navbar-close">Publicar</button>
+      <ul *ngIf="!login.isLogged">
+        <li class="mb-3">
+          <a
+            routerLink="explore"
+            routerLinkActive="true"
+            class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl"
+            >Explorar habitaciones</a
+          >
+        </li>
+        <li class="mb-3">
+          <a
+            routerLink="rent"
+            routerLinkActive="true"
+            class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl"
+            >Arrienda</a
+          >
+        </li>
+        <li class="mb-3">
+          <a
+            routerLink="spaces"
+            routerLinkActive="true"
+            class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl"
+            >Espacios</a
+          >
+        </li>
+        <li class="mb-3">
+          <a
+            routerLink="about"
+            routerLinkActive="true"
+            class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl"
+            >Sobre nosotros</a
+          >
+        </li>
+        <li class="mb-1">
+          <a
+            routerLink="contact"
+            routerLinkActive="true"
+            class="block p-4 text-sm font-medium text-center text-gray-600 bg-gray-100 navbar-close hover:bg-blue-50 hover:text-blue-600 rounded-xl"
+            >Contacto</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="mt-auto">
+      <div class="pt-6">
+        <button
+          (click)="openModal()"
+          *ngIf="login.isLogged"
+          class="block w-full px-4 py-3 mb-3 text-xs font-medium leading-none text-center text-gray-600 bg-gray-100 hover:bg-gray-100 rounded-xl navbar-close"
+        >
+          Publicar
+        </button>
 
-				<button (click)="publicar()" routerLinkActive="true" *ngIf="login.isLoggedIn()"
-					class="block w-full px-4 py-3 mb-3 text-xs font-medium leading-none text-center text-gray-600 bg-gray-100 hover:bg-gray-100 rounded-xl navbar-close">Publicar</button>
+        <button
+          routerLinkActive="true"
+          *ngIf="!login.isLogged"
+          class="block w-full px-4 py-3 mb-3 text-xs font-medium leading-none text-center text-gray-600 bg-gray-100 hover:bg-gray-100 rounded-xl navbar-close"
+        >
+          Publicar
+        </button>
 
-				<button (click)="perfil()" routerLinkActive="true" *ngIf="login.isLoggedIn()"
-					class="block w-full px-4 py-3 mb-2 text-xs font-medium leading-loose text-center text-white bg-green-600 navbar-close rounded-xl">Perfil</button>
+        <button
+          routerLinkActive="true"
+          *ngIf="!login.isLogged"
+          class="block w-full px-4 py-3 mb-2 text-xs font-medium leading-loose text-center text-white bg-green-600 navbar-close rounded-xl"
+        >
+          Perfil
+        </button>
 
-				<button (click)="openModal()" *ngIf="!login.isLoggedIn()"
-					class="block w-full py-3 mb-2 text-xs font-medium leading-loose text-center text-white bg-blue-600 px-0-4 navbar-close rounded-xl">Iniciar
-					sesión</button>
-			</div>
-			<p class="my-4 text-xs text-center text-gray-400">
-				<span>Copyright © 2023</span>
-			</p>
-		</div>
-	</nav>
+        <button
+          (click)="openModal()"
+          *ngIf="login.isLogged"
+          class="block w-full py-3 mb-2 text-xs font-medium leading-loose text-center text-white bg-blue-600 px-0-4 navbar-close rounded-xl"
+        >
+          Iniciar sesión
+        </button>
+      </div>
+      <p class="my-4 text-xs text-center text-gray-400">
+        <span>Copyright © 2023</span>
+      </p>
+    </div>
+  </nav>
 </div>
 
 <div class="" *ngIf="modalSwitch == true">
-	<app-modalogin></app-modalogin>
+  <app-modalogin></app-modalogin>
 </div>

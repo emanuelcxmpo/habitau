@@ -4,14 +4,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-formusuario',
   templateUrl: './formusuario.component.html',
-  styleUrls: ['./formusuario.component.scss']
+  styleUrls: ['./formusuario.component.scss'],
 })
 export class FormusuarioComponent implements OnInit {
   user: any = null;
-  constructor(public LoginService: LoginService) { }
+  constructor(public LoginService: LoginService) {}
 
   ngOnInit(): void {
-    this.user = this.LoginService.getUser();
+    // this.user = this.LoginService.getUser();
   }
-
 }
